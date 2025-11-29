@@ -1,0 +1,33 @@
+.floating-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--clr-primary);
+  color: #fff;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  z-index: 999;
+}
+
+.floating-btn:hover {
+  background-color: var(--clr-primary-dark);
+  transform: translateY(-4px) scale(1.05);
+}
+
+.floating-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.floating-btn i {
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}

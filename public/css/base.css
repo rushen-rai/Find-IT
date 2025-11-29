@@ -1,0 +1,80 @@
+/*RESET*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*ROOT VARIABLES*/
+:root {
+  --clr-primary: #28855F;
+  --clr-primary-dark: #1f6a4c;
+  --clr-primary-light: rgba(40, 133, 95, 0.08);
+  --clr-accent: #f1c40f;
+  --clr-dark: #293C45;
+  --clr-bg: #fff;
+  --font-body: 'Roboto', sans-serif;
+  --font-heading: 'Merriweather', serif;
+}
+
+/* BODY & TYPOGRAPHY */
+body {
+  font-family: var(--font-body);
+  background-color: var(--clr-bg);
+  color: var(--clr-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*LABEL COLORS*/
+
+.label.lost {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.label.found {
+  background: #27ae60;
+  color: #fff;
+}
+
+.label.matched {
+  background: #9b59b6;
+  color: #fff;
+}
+
+.label.pending {
+  background: #f1c40f;
+  color: #000;
+}
+
+.label.claimed {
+  background: #2ecc71;
+  color: #fff;
+}
+
+/*STATUS COLORS*/
+
+.status.active {
+  background: rgba(40, 133, 95, 0.1);
+  color: var(--clr-primary);
+}
+
+.status.pending {
+  background: rgba(241, 196, 15, 0.15);
+  color: #b88700;
+}
+
+.status.claimed {
+  background: rgba(46, 204, 113, 0.15);
+  color: #1e8449;
+}

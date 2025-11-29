@@ -1,0 +1,187 @@
+.reportform-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 3000;
+}
+
+.reportform-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.reportform-container {
+  background: #fff;
+  width: min(90vw, 850px);
+  max-height: 95vh;
+  overflow-y: auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  position: relative;
+  border: 2px solid var(--clr-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.reportform-container h2 {
+  text-align: left;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--clr-dark);
+}
+
+.reportform-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.reportform-close:hover {
+  color: var(--clr-primary);
+}
+
+/* Section Styles */
+.reportform-section {
+  margin-bottom: 1.5rem;
+  border: 1.5px solid var(--clr-primary);
+  border-radius: 0.8rem;
+  padding: 1rem 1.5rem;
+}
+
+.reportform-section h3 {
+  font-size: 1.1rem;
+  color: var(--clr-dark);
+  margin-bottom: 1rem;
+}
+
+/* Report Type */
+.reportform-type-options {
+  display: flex;
+  gap: 1rem;
+}
+
+.reportform-type-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: 2px solid var(--clr-primary);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--clr-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reportform-type-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: 2px solid var(--clr-primary);
+  border-radius: 0.5rem;
+  background: #fff;
+  color: var(--clr-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reportform-type-btn.active {
+  background: var(--clr-primary);
+  color: #fff;
+}
+
+.reportform-type-btn:not(.active):hover {
+  background: #f1f1f1;
+}
+
+/* Inputs */
+.reportform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.reportform-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.reportform-group label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--clr-dark);
+}
+
+.reportform-group input[type="text"],
+.reportform-group input[type="date"],
+.reportform-group select,
+.reportform-group textarea {
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid var(--clr-primary);
+  border-radius: 0.4rem;
+  outline: none;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+}
+
+.reportform-group textarea {
+  resize: none;
+}
+
+.reportform-group input[type="file"] {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Buttons */
+.reportform-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.reportform-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.reportform-clear {
+  background: #eee;
+  color: #333;
+}
+
+.reportform-submit {
+  background: var(--clr-primary);
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.reportform-submit:hover {
+  background: var(--clr-primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .reportform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reportform-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}

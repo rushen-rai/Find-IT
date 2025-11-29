@@ -1,0 +1,114 @@
+.claim-approval-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 4000;
+}
+
+.claim-approval-overlay.active {   
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.claim-approval-container {
+  background: #fff;
+  width: 700px;
+  max-width: 95%;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 2px solid var(--clr-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.claim-approval-close:hover {
+  color: var(--clr-primary);
+}
+
+.claim-approval-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.claim-approval-container h2 {
+  font-size: 1.8rem;
+  color: #000;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.claim-approval-section {
+  border: 1.5px solid var(--clr-primary);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.claim-approval-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--clr-dark);
+}
+
+.claim-approval-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.claim-approval-group label {
+  display: block;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0.4rem;
+}
+
+.claim-approval-field {
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--clr-primary);
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.claim-approval-status {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--clr-primary);
+  border-radius: 0.6rem;
+  color: var(--clr-primary);
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.claim-approval-message {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #293C45;
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .claim-approval-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .claim-approval-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}

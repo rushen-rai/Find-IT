@@ -1,0 +1,263 @@
+.analytics-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background: #f9fafb;
+}
+
+/*TOP SUMMARY CARDS*/
+.analytics-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.analytics-cards .card {
+  background: #fff;
+  border: 2px solid var(--clr-primary);
+  border-radius: 20px;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.analytics-cards .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+.analytics-cards .card i {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/*Contextual Colors for Cards*/
+.card.total {
+  border-color: var(--clr-primary);
+}
+.card.total i,
+.card.total h2 {
+  color: var(--clr-primary);
+}
+
+.card.lost {
+  border-color: #e74c3c;
+}
+.card.lost i,
+.card.lost h2 {
+  color: #e74c3c;
+}
+
+.card.found {
+  border-color: #3498db;
+}
+.card.found i,
+.card.found h2 {
+  color: #3498db;
+}
+
+.card.active {
+  border-color: #17b775;
+}
+.card.active i,
+.card.active h2 {
+  color: #17b775;
+}
+
+.card.pending {
+  border-color: #f1c40f;
+}
+.card.pending i,
+.card.pending h2 {
+  color: #f1c40f;
+}
+
+.analytics-cards .card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--clr-dark);
+}
+
+.analytics-cards .card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.25rem 0;
+}
+
+.analytics-cards .card p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.analytics-cards .card p .up {
+  color: #17b775;
+  font-weight: 700;
+}
+
+/*CHARTS SECTION*/
+.analytics-charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.5rem;
+}
+
+.chart.card {
+  background: #fff;
+  border: 2px solid var(--clr-primary);
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chart h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-dark);
+  margin-bottom: 0.3rem;
+}
+
+.chart p {
+  color: #666;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.chart-placeholder {
+  background: #f0f2f5;
+  border-radius: 15px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  color: #888;
+}
+
+/*LIST SECTION*/
+.analytics-lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.5rem;
+}
+
+.list.card {
+  background: #fff;
+  border: 2px solid var(--clr-primary);
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.list h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.list p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+  color: var(--clr-dark);
+  position: relative;
+}
+
+.list ul li:last-child {
+  border-bottom: none;
+}
+
+.list ul li span {
+  font-weight: 600;
+  color: var(--clr-primary);
+}
+
+/*Ranking Style for Top Locations*/
+.list.top-locations ul li {
+  padding-left: 2.5rem;
+  counter-increment: rank;
+}
+
+.list.top-locations ul {
+  counter-reset: rank;
+}
+
+.list.top-locations ul li::before {
+  content: counter(rank);
+  position: absolute;
+  left: 0.8rem;
+  background: var(--clr-primary);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+/*Highlight Top 3 Ranks*/
+.list.top-locations ul li:nth-child(1)::before {
+  background: #f1c40f;
+}
+.list.top-locations ul li:nth-child(2)::before {
+  background: #bdc3c7;
+}
+.list.top-locations ul li:nth-child(3)::before {
+  background: #cd7f32;
+}
+
+/*Activity Status Colors*/
+.activity li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.activity li span {
+  border-radius: 10px;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.activity li span.pending {
+  background: #fff4cc;
+  color: #e0a200;
+}
+
+.activity li span.success {
+  background: #ccf5e1;
+  color: #17b775;
+}
+
+/*Responsive adjustments*/
+@media (max-width: 768px) {
+  .analytics-dashboard {
+    padding: 1rem;
+  }
+}

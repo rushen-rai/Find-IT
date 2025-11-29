@@ -1,0 +1,149 @@
+.proofform-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 3000;
+}
+
+.proofform-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.proofform-container {
+  background: #fff;
+  width: min(90vw, 850px);
+  max-height: 95vh;
+  overflow-y: auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  position: relative;
+  border: 2px solid var(--clr-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.proofform-container h2 {
+  text-align: left;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--clr-dark);
+}
+
+.proofform-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.proofform-close:hover {
+  color: var(--clr-primary);
+}
+
+/* Section Styles */
+.proofform-section {
+  margin-bottom: 1.5rem;
+  border: 1.5px solid var(--clr-primary);
+  border-radius: 0.8rem;
+  padding: 1rem 1.5rem;
+}
+
+.proofform-section h3 {
+  font-size: 1.1rem;
+  color: var(--clr-dark);
+  margin-bottom: 1rem;
+}
+
+/* Inputs */
+.proofform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.proofform-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.proofform-group label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--clr-dark);
+}
+
+.proofform-group input[type="text"],
+.proofform-group input[type="date"],
+.proofform-group input[type="file"],
+.proofform-group select,
+.proofform-group textarea {
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid var(--clr-primary);
+  border-radius: 0.4rem;
+  outline: none;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+}
+
+.proofform-group textarea {
+  resize: none;
+}
+
+.proofform-group input[type="file"] {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Buttons */
+.proofform-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.proofform-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.proofform-clear {
+  background: #eee;
+  color: #333;
+}
+
+.proofform-submit {
+  background: var(--clr-primary);
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.proofform-submit:hover {
+  background: var(--clr-primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .proofform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proofform-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
